@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  # Backend Service
+  server:
+    build:
+      context: ./server  
+    container_name: mern-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      
+      - MONGO_URI=${MONGO_URI}
+
+  # Frontend Service
+  client:
+    build:
+      context: ./client 
+    container_name: mern-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
