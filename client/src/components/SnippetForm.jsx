@@ -8,15 +8,16 @@ const SnippetForm = ({ onSnippetAdded }) => {
     const [language, setLanguage] = useState('javascript');
     const [code, setCode] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!title.trim() || !code.trim()) return;
-        const newSnippet = { _id: Date.now(), title, language, code };
-        onSnippetAdded(newSnippet);
-        setTitle('');
-        setLanguage('javascript');
-        setCode('');
-    };
+    // SnippetForm.jsx
+const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!title.trim() || !code.trim()) return;
+   
+    onSnippetAdded({ title, language, code });
+    setTitle('');
+    setLanguage('javascript');
+    setCode('');
+};
 
     return (
         <form onSubmit={handleSubmit} className="bg-slate-800 border border-slate-700 rounded-xl p-6 mb-12 shadow-lg">

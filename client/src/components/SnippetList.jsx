@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import toast from 'react-hot-toast'; // <-- Import කරන්න
+import toast from 'react-hot-toast'; // <-- Import 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { TrashIcon, ClipboardDocumentIcon } from '@heroicons/react/24/outline';
@@ -10,7 +10,7 @@ const SnippetList = ({ snippets, onSnippetDeleted }) => {
     
     const handleCopy = (codeToCopy) => {
         navigator.clipboard.writeText(codeToCopy);
-        toast.success('Copied to clipboard!'); // <-- Notification එක
+        toast.success('Copied to clipboard!'); // <-- Notification 
     };
 
     // --- Empty State ---

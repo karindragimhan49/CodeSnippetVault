@@ -1,29 +1,13 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import toast from 'react-hot-toast'; // <-- Import කරන්න
-import { animateScroll as scroll } from 'react-scroll'; // <-- Import කරන්න
+import toast from 'react-hot-toast';
+import { animateScroll as scroll } from 'react-scroll';
 import SnippetForm from '@/components/SnippetForm';
 import SnippetList from '@/components/SnippetList';
+import API from '@/api'; 
 
-// Mock Data
-const initialSnippets = [
-    { _id: 1, title: "Async Data Fetching Hook", language: "typescript", code: `import { useState, useEffect } from 'react';\n\nfunction useFetch<T>(url: string) {\n  // ...\n}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
-];
 
-// --- Loading Spinner Component ---
 const LoadingSpinner = () => (
     <div className="flex justify-center items-center py-16">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-sky-500"></div>
@@ -32,27 +16,50 @@ const LoadingSpinner = () => (
 
 export default function HomePage() {
     const [snippets, setSnippets] = useState([]);
-    const [loading, setLoading] = useState(true); // <-- Loading state එක
+    const [loading, setLoading] = useState(true);
 
+    // --- Data Fetching ---
     useEffect(() => {
-        // Simulate API loading time
-        const timer = setTimeout(() => {
-            setSnippets(initialSnippets);
-            setLoading(false);
-        }, 1500); // 1.5 seconds delay
-
-        return () => clearTimeout(timer); // Cleanup on unmount
+        const fetchSnippets = async () => {
+            try {
+                setLoading(true);
+                const res = await API.get('/snippets'); // GET request to our backend
+                setSnippets(res.data);
+            } catch (err) {
+                console.error("Error fetching snippets:", err);
+                toast.error("Could not fetch snippets. Is the server running?");
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchSnippets();
     }, []);
 
-    const handleSnippetAdded = (newSnippet) => {
-        setSnippets([newSnippet, ...snippets]);
-        toast.success('Snippet added successfully!'); // <-- Notification එක
-        scroll.scrollToTop({ duration: 500, smooth: 'easeInOutQuad' }); // <-- Smooth Scroll
+    // --- Add Snippet ---
+    const handleSnippetAdded = async (snippetData) => {
+        try {
+           
+            const res = await API.post('/snippets', snippetData);
+          
+            setSnippets([res.data, ...snippets]);
+            toast.success('Snippet added successfully!');
+            scroll.scrollToTop({ duration: 500, smooth: 'easeInOutQuad' });
+        } catch (err) {
+            console.error("Error adding snippet:", err);
+            toast.error(err.response?.data?.message || "Failed to add snippet.");
+        }
     };
 
-    const handleSnippetDeleted = (deletedId) => {
-        setSnippets(snippets.filter(s => s._id !== deletedId));
-        toast.error('Snippet deleted.'); // <-- Notification එක
+    // --- Delete Snippet ---
+    const handleSnippetDeleted = async (deletedId) => {
+        try {
+            await API.delete(`/snippets/${deletedId}`);
+            setSnippets(snippets.filter(s => s._id !== deletedId));
+            toast.error('Snippet deleted.');
+        } catch (err) {
+            console.error("Error deleting snippet:", err);
+            toast.error("Failed to delete snippet.");
+        }
     };
 
     return (
@@ -63,14 +70,13 @@ export default function HomePage() {
                         Code Snippet <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-500">Vault</span>
                     </h1>
                     <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-                        A clean, professional, and modern home for your most-used code snippets. Built with Next.js & Tailwind CSS.
-                    </p>
+                       A sleek and organized home for your most-used code snippets — crafted for clarity, speed, and simplicity.
+                      </p>
                 </header>
                 
                 <section className="max-w-3xl mx-auto">
                     <SnippetForm onSnippetAdded={handleSnippetAdded} />
                     
-                    {/* --- Conditional Rendering --- */}
                     {loading ? (
                         <LoadingSpinner />
                     ) : (
