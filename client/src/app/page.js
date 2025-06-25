@@ -10,6 +10,17 @@ import SnippetList from '@/components/SnippetList';
 const initialSnippets = [
     { _id: 1, title: "Async Data Fetching Hook", language: "typescript", code: `import { useState, useEffect } from 'react';\n\nfunction useFetch<T>(url: string) {\n  // ...\n}` },
     { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
+    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
+    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
+    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
+    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
+    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
+    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
+    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
+    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
+    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
+    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
+    { _id: 2, title: "Python FastAPI Endpoint", language: "python", code: `from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get("/")\ndef read_root():\n    return {"Hello": "World"}` },
 ];
 
 // --- Loading Spinner Component ---

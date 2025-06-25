@@ -2,28 +2,28 @@ const express = require('express');
 const router = express.Router();
 const Snippet = require('../models/Snippet');
 
-// GET all snippets
+// GET all snippets, sorted by newest first
 router.get('/', async (req, res) => {
     try {
         const snippets = await Snippet.find().sort({ createdAt: -1 });
         res.json(snippets);
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: "Server Error: " + err.message });
     }
 });
 
 // POST a new snippet
 router.post('/', async (req, res) => {
-    const snippet = new Snippet({
-        title: req.body.title,
-        language: req.body.language,
-        code: req.body.code
-    });
+    const { title, language, code } = req.body;
+    if (!title || !language || !code) {
+        return res.status(400).json({ message: 'All fields are required.' });
+    }
+    const newSnippet = new Snippet({ title, language, code });
     try {
-        const newSnippet = await snippet.save();
-        res.status(201).json(newSnippet);
+        const savedSnippet = await newSnippet.save();
+        res.status(201).json(savedSnippet);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(400).json({ message: "Error saving snippet: " + err.message });
     }
 });
 
@@ -31,12 +31,12 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const snippet = await Snippet.findById(req.params.id);
-        if (!snippet) return res.status(404).json({ message: 'Cannot find snippet' });
+        if (!snippet) return res.status(404).json({ message: 'Snippet not found' });
 
         await snippet.deleteOne();
-        res.json({ message: 'Deleted Snippet' });
+        res.json({ message: 'Snippet deleted successfully' });
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: "Server Error: " + err.message });
     }
 });
 
