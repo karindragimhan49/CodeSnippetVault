@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="http://206.189.35.179:3000/"><img src="https://skillicons.dev/icons?i=docker,githubactions,digitalocean,nginx,nextjs,react,tailwind,nodejs,express,mongo" alt="Tech Stack"></a>
+  <a href="http://206.189.35.179:3000/"><img src="https://skillicons.dev/icons?i=docker,githubactions,nginx,nextjs,react,tailwind,nodejs,express,mongo" alt="Tech Stack"></a>
   <br>
   Full-Stack CI/CD Pipeline for a MERN Application
   <br>
