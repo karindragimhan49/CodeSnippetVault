@@ -9,4 +9,4 @@ const SnippetSchema = new mongoose.Schema({
     project: { type: String, required: true, trim: true, default: 'General' }, 
 }, { timestamps: true });
 
-module.exports = mongoose.model('Snippet', SnippetSchema);
+module.exports = mongoose.models.Snippet || mongoose.model('Snippet', SnippetSchema);

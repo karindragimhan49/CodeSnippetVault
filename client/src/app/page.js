@@ -62,6 +62,9 @@ export default function HomePage() {
     }, [fetchSnippets]);
 
     const handleSnippetAdded = async (snippetData) => {
+        console.log('--- DATA BEING SENT TO BACKEND ---', snippetData);
+
+
         try {
             const res = await API.post('/snippets', snippetData);
             setSnippets(prevSnippets => [res.data, ...prevSnippets]); // Optimistic update
