@@ -1,3 +1,4 @@
+#workflow
 name: MERN App CI/CD Pipeline
 
 on:
