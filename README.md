@@ -1,125 +1,108 @@
-<h1 align="center">
-  <br>
-  <a href="http://206.189.35.179:3000/"><img src="https://skillicons.dev/icons?i=docker,githubactions,nginx,nextjs,react,tailwind,nodejs,express,mongo" alt="Tech Stack"></a>
-  <br>
-  Full-Stack CI/CD Pipeline for a MERN Application
-  <br>
-</h1>
+# Full-Stack CI/CD Pipeline for a MERN Application
 
-<p align="center">A comprehensive, production-grade project demonstrating a complete CI/CD lifecycle for a containerized MERN application. This repository showcases the automation of building, testing, and deploying a full-stack web application to a cloud server using Docker and GitHub Actions.</p>
+<div align="center">
+
+![Project Banner](https://skillicons.dev/icons?i=nextjs,react,nodejs,express,mongo,docker,githubactions,nginx,digitalocean&perline=9)
+
+</div>
 
 <p align="center">
-  <a href="http://206.189.35.179:3000/"><strong>🚀 View Live Demo 🚀</strong></a>
+  A comprehensive, production-grade project demonstrating a complete CI/CD lifecycle for a containerized MERN (MongoDB, Express, React, Next.js) application. This repository showcases the automation of building, testing, and deploying a full-stack web application to a cloud server using Docker and GitHub Actions.
 </p>
 
 <p align="center">
-  <a href="#-key-features">Key Features</a> •
-  <a href="#-architectural-diagram">Architecture</a> •
-  <a href="#-tech-stack">Tech Stack</a> •
-  <a href="#-cicd-pipeline">CI/CD Pipeline</a> •
-  <a href="#-local-development">Local Setup</a> •
-  <a href="#-what-ive-learned">Learnings</a>
+  <a href="http://206.189.35.179:3000/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Open%20Application-blue?style=for-the-badge&logo=digitalocean" alt="Live Demo">
+  </a>
 </p>
 
-![App Screenshot](<PASTE_YOUR_UI_SCREENSHOT_URL_HERE>)
+---
 
-## ✨ Key Features
+## 🚀 Project Overview: "Code Snippet Vault"
 
-The core application is a **"Code Snippet Vault"** — a practical tool for developers to save, organize, and retrieve frequently used code snippets.
+The core application is a "Code Snippet Vault" — a practical tool for developers to save, organize, and retrieve frequently used code snippets. It's built on a modern MERN stack with a professional, user-friendly interface.
 
--   **🗂️ Project-Based Organization:** Group snippets into different projects (e.g., "E-commerce Site," "Personal Blog").
--   **🔍 Dynamic Filtering & Searching:** Instantly filter snippets by project or search by title with a debounced search function.
--   **💻 Syntax Highlighting:** Clear and readable code blocks for various languages with line numbers.
--   **📋 Copy to Clipboard:** Easily copy code snippets with a single click.
--   **💅 Polished User Experience:** Smooth loading states, toast notifications for actions, and a fully responsive design.
+### ✨ Key Features
+
+-   **Create, Read, Delete (CRD) Snippets:** Full functionality to manage code snippets.
+-   **Project-Based Organization:** Group snippets into different projects (e.g., "E-commerce Site," "Personal Blog").
+-   **Dynamic Filtering & Searching:** Instantly filter snippets by project or search by title.
+-   **Syntax Highlighting:** Clear and readable code blocks for various languages.
+-   **Enhanced UX:** Features like loading states, notifications (toasts), and a "copy to clipboard" function provide a polished user experience.
+
+<br/>
+
+### 🖼️ Application UI Screenshot
+
+<!-- Replace the URL below with your actual screenshot URL -->
+![Code Snippet Vault UI](<PASTE_YOUR_UI_SCREENSHOT_URL_HERE>)
+_The main interface of the Code Snippet Vault, showcasing the project filter and search functionality._
 
 ---
 
-## 🏛️ Architectural Diagram
+## 🛠️ Tech Stack & Architecture
 
-This diagram illustrates the flow from a code push to the final deployment on the cloud server.
+This project utilizes a modern, industry-standard technology stack to cover the entire development and deployment process.
 
-```mermaid
-graph TD
-    subgraph "Developer's Machine"
-        A(Developer)
-    end
+| Area                  | Technology                                                                                           |
+| --------------------- | ---------------------------------------------------------------------------------------------------- |
+| **Frontend**          | [**Next.js**](https://nextjs.org/) (React Framework), [**Tailwind CSS**](https://tailwindcss.com/)      |
+| **Backend**           | [**Node.js**](https://nodejs.org/), [**Express.js**](https://expressjs.com/)                            |
+| **Database**          | [**MongoDB Atlas**](https://www.mongodb.com/atlas) (Cloud Database)                                  |
+| **Containerization**  | [**Docker**](https://www.docker.com/) & [**Docker Compose**](https://docs.docker.com/compose/)         |
+| **CI/CD**             | [**GitHub Actions**](https://github.com/features/actions)                                              |
+| **Cloud Provider**    | [**DigitalOcean**](https://www.digitalocean.com/) (Droplet)                                            |
 
-    subgraph "CI/CD Automation"
-        B{GitHub Repo}
-        C[GitHub Actions]
-        D((Docker Hub))
-    end
-    
-    subgraph "Cloud Infrastructure (DigitalOcean)"
-        E(Droplet)
-        F[Backend Container]
-        G[Frontend Container]
-    end
+<br/>
 
-    subgraph "Database as a Service"
-      H((MongoDB Atlas))
-    end
+### 🏗️ Architectural Diagram
 
-    subgraph "End User"
-      I(User)
-    end
-
-    A -- "1. git push" --> B
-    B -- "2. Triggers Workflow" --> C
-    C -- "3. Build & Push Images" --> D
-    C -- "4. Deploy via SSH" --> E
-    E -- "5. Pull Images" --> D
-    E -- "6. Run Containers" --> F & G
-    F -- "DB Calls" --> H
-    I -- "Accesses Website" --> G
-    G -- "API Calls" --> F
-```
+<!-- This is a placeholder for your architecture diagram image. -->
+<!-- Replace the URL below with your actual diagram URL. -->
+![Architectural Diagram](<PASTE_YOUR_ARCHITECTURE_DIAGRAM_URL_HERE>)
+_High-level overview of the CI/CD workflow from code commit to live deployment._
 
 ---
 
-## 🛠️ Tech Stack
+## 🔄 CI/CD Pipeline Explained
 
-| Category           | Technology / Service                                                                                       |
-| ------------------ | ---------------------------------------------------------------------------------------------------------- |
-| **Frontend**       | [**Next.js**](https://nextjs.org/) (React Framework), [**Tailwind CSS**](https://tailwindcss.com/)           |
-| **Backend**        | [**Node.js**](https://nodejs.org/), [**Express.js**](https://expressjs.com/)                                |
-| **Database**       | [**MongoDB Atlas**](https://www.mongodb.com/atlas) (Cloud Database)                                      |
-| **Containerization** | [**Docker**](https://www.docker.com/) & [**Docker Compose**](https://docs.docker.com/compose/)             |
-| **CI/CD**          | [**GitHub Actions**](https://github.com/features/actions)                                                  |
-| **Cloud Provider** | [**DigitalOcean**](https://www.digitalocean.com/) (Droplet)                                                |
+The heart of this project is the automated deployment pipeline configured in `.github/workflows/deploy.yml`.
 
----
+**▶️ Trigger:** The pipeline automatically runs on every `git push` to the `main` branch.
 
-## 🔄 CI/CD Pipeline
+**⚙️ Pipeline Stages:**
 
-The entire deployment process is automated using the workflow defined in `.github/workflows/deploy.yml`.
+1.  **Checkout Code:** The latest code is checked out from the repository.
+2.  **Login to Docker Hub:** Securely logs into Docker Hub using encrypted secrets.
+3.  **Build Docker Images:** Builds separate, optimized Docker images for the frontend (Next.js) and backend (Node.js) applications.
+4.  **Push to Docker Hub:** Tags the newly built images with `:latest` and pushes them to a public Docker Hub repository.
+5.  **Deploy via SSH:**
+    -   Securely connects to the DigitalOcean Droplet using an SSH key stored in GitHub Secrets.
+    -   Pulls the latest images from Docker Hub.
+    -   Stops and removes the old running containers to prevent conflicts.
+    -   Starts new containers from the updated images, injecting the `MONGO_URI` environment variable into the backend container.
 
-**Trigger:** The pipeline automatically runs on every `git push` to the `main` branch.
+<br/>
 
-**Key Steps:**
-1.  **Checkout & Login:** Checks out the code and securely logs into Docker Hub using encrypted secrets.
-2.  **Build & Push:** Builds optimized Docker images for both frontend and backend, and pushes them to Docker Hub.
-3.  **Deploy via SSH:**
-    -   Securely connects to the DigitalOcean Droplet.
-    -   Pulls the latest images, stops/removes old containers, and starts new ones.
-    -   Injects the `MONGO_URI` as an environment variable into the backend container for database connectivity.
+### アクション (GitHub Actions) Workflow Screenshot
 
-![Actions Screenshot](<PASTE_YOUR_GITHUB_ACTIONS_SCREENSHOT_URL_HERE>)
+<!-- Replace the URL below with your actual workflow screenshot URL. -->
+![GitHub Actions Workflow](<PASTE_YOUR_GITHUB_ACTIONS_SCREENSHOT_URL_HERE>)
+_A successful run of the CI/CD pipeline in the GitHub Actions tab._
 
 ---
 
-## ⚙️ Local Development
+## 🔧 Local Development & Setup
 
-To run this project locally, you need Git, Node.js, and Docker Desktop.
+To run this project on your local machine, you'll need Git, Node.js, and Docker Desktop installed.
 
-1.  **Clone the Repository:**
+1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/karindragimhan49/Containerized-Mern-CICD-Pipeline.git
+    cd Containerized-Mern-CICD-Pipeline
     ```
 
-2.  **Setup Environment Variables:**
+2.  **Create Environment Variables:**
     -   Create a `.env` file in the `server/` directory.
     -   Create another `.env` file in the project's **root** directory.
     -   Add your MongoDB Atlas connection string to **both** files:
@@ -128,22 +111,41 @@ To run this project locally, you need Git, Node.js, and Docker Desktop.
         ```
 
 3.  **Run with Docker Compose (Recommended):**
-    This method mirrors the production setup.
+    This method mirrors the production environment.
     ```bash
     docker-compose up --build
     ```
-    -   App will be available at `http://localhost:3000`.
+    -   Frontend will be available at `http://localhost:3000`.
+    -   Backend API will be available at `http://localhost:5000`.
 
-![Droplet Screenshot](<PASTE_YOUR_DROPLET_SSH_SCREENSHOT_URL_HERE>)
+4.  **Run with Node.js (Traditional Method):**
+    ```bash
+    # Install all dependencies from the root
+    npm install concurrently
+    cd server && npm install && cd ../client && npm install
+    
+    # Run both client and server concurrently from the root directory
+    cd ..
+    npm run dev
+    ```
+
+<br/>
+
+### ☁️ Server Deployment Screenshot
+
+<!-- Replace the URL below with your server screenshot URL. -->
+![DigitalOcean Droplet SSH](<PASTE_YOUR_DROPLET_SSH_SCREENSHOT_URL_HERE>)
+_Checking the status of running Docker containers on the DigitalOcean Droplet via `docker ps`._
 
 ---
 
-## 🧠 What I've Learned
+## 💡 What I've Learned
 
-This project provided hands-on experience with the entire software development lifecycle, from coding to deployment.
+This project was a deep dive into the full lifecycle of a modern web application. Key takeaways include:
 
--   **Full-Cycle Automation:** Mastered the process of setting up a complete, end-to-end CI/CD pipeline.
--   **Containerization Best Practices:** Learned to create optimized, multi-stage Dockerfiles for a full-stack application.
--   **Infrastructure as Code (IaC) Mindset:** Defined the entire application stack (frontend, backend) in code via `docker-compose.yml`.
--   **Secure Credential Management:** Utilized GitHub Secrets to manage sensitive information like API keys and database URIs, a crucial skill in production environments.
--   **Problem-Solving:** Overcame real-world challenges related to CORS, database connectivity, and environment-specific configurations.
+-   **End-to-end DevOps automation** from code commit to live deployment.
+-   The power of **containerization with Docker** to create portable, consistent environments.
+-   Implementing a robust **CI/CD pipeline using GitHub Actions** to eliminate manual deployment tasks.
+-   **Managing infrastructure** on a cloud provider like DigitalOcean.
+-   Securely handling sensitive information like API keys and database credentials using **GitHub Secrets**.
+-   Building a **full-featured MERN application** with a focus on professional UI/UX.
