@@ -59,7 +59,7 @@ This project utilizes a modern, industry-standard technology stack to cover the 
 
 <!-- This is a placeholder for your architecture diagram image. -->
 <!-- Replace the URL below with your actual diagram URL. -->
-![Architectural Diagram](<PASTE_YOUR_ARCHITECTURE_DIAGRAM_URL_HERE>)
+![Architectural Diagram](https://github.com/karindragimhan49/CodeSnippetVault/issues/1#issue-3180445662)
 _High-level overview of the CI/CD workflow from code commit to live deployment._
 
 ---
