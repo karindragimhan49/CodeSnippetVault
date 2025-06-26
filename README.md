@@ -59,7 +59,7 @@ This project utilizes a modern, industry-standard technology stack to cover the 
 
 <!-- This is a placeholder for your architecture diagram image. -->
 <!-- Replace the URL below with your actual diagram URL. -->
-![Architectural Diagram](https://github.com/karindragimhan49/CodeSnippetVault/issues/1#issue-3180445662)
+![Architectural Diagram](![Image](https://github.com/user-attachments/assets/35eba48c-2b0f-4120-8f43-5bbaa2c2f263))
 _High-level overview of the CI/CD workflow from code commit to live deployment._
 
 ---
@@ -134,7 +134,7 @@ To run this project on your local machine, you'll need Git, Node.js, and Docker 
 ### ☁️ Server Deployment Screenshot
 
 <!-- Replace the URL below with your server screenshot URL. -->
-![DigitalOcean Droplet SSH](<PASTE_YOUR_DROPLET_SSH_SCREENSHOT_URL_HERE>)
+![DigitalOcean Droplet SSH](![Image](https://github.com/user-attachments/assets/2f1e4797-8f1e-4983-a055-6c5d059ab10b))
 _Checking the status of running Docker containers on the DigitalOcean Droplet via `docker ps`._
 
 ---
