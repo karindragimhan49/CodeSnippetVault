@@ -47,9 +47,10 @@ This project utilizes a modern, industry-standard technology stack to cover the 
 
 <br/>
 
-### 🏗️ Architectural Diagram
+### 🏗 Architectural Diagram
 
-![Architectural Diagram](![Image](https://github.com/karindragimhan49/CodeSnippetVault/blob/a69a1b5d965d50bb2a058cea2d69d601f0a6c22b/snap/digram.png))
+![Architectural Diagram](https://github.com/karindragimhan49/CodeSnippetVault/blob/b97b6459c2438e53e204c3a53d6bf5b8ae4a5ffb/snap/digram.png)
+
 _High-level overview of the CI/CD workflow from code commit to live deployment._
 
 ---
