@@ -134,7 +134,7 @@ To run this project on your local machine, you'll need Git, Node.js, and Docker 
 ### ☁️ Server Deployment Screenshot
 
 <!-- Replace the URL below with your server screenshot URL. -->
-![DigitalOcean Droplet SSH](![Image](https://github.com/user-attachments/assets/2f1e4797-8f1e-4983-a055-6c5d059ab10b))
+![DigitalOcean Droplet SSH](![Image](https://github.com/karindragimhan49/CodeSnippetVault/blob/4dede5a400c82875f23a452516104b7c54097929/snap/digram.png)
 _Checking the status of running Docker containers on the DigitalOcean Droplet via `docker ps`._
 
 ---
