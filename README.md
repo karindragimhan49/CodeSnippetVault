@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Project Banner](https://skillicons.dev/icons?i=nextjs,react,nodejs,express,mongo,docker,githubactions,nginx,digitalocean&perline=9)
+![Project Banner](https://github.com/karindragimhan49/CodeSnippetVault/blob/a69a1b5d965d50bb2a058cea2d69d601f0a6c22b/snap/ui.png)
 
 </div>
 
@@ -35,7 +35,7 @@ The core application is a "Code Snippet Vault" — a practical tool for develope
 ### 🖼️ Application UI Screenshot
 
 <!-- Replace the URL below with your actual screenshot URL -->
-![Code Snippet Vault UI](<PASTE_YOUR_UI_SCREENSHOT_URL_HERE>)
+![Code Snippet Vault UI](https://github.com/karindragimhan49/CodeSnippetVault/blob/a69a1b5d965d50bb2a058cea2d69d601f0a6c22b/snap/ui.png)
 _The main interface of the Code Snippet Vault, showcasing the project filter and search functionality._
 
 ---
@@ -59,7 +59,7 @@ This project utilizes a modern, industry-standard technology stack to cover the 
 
 <!-- This is a placeholder for your architecture diagram image. -->
 <!-- Replace the URL below with your actual diagram URL. -->
-![Architectural Diagram](![Image](https://github.com/user-attachments/assets/35eba48c-2b0f-4120-8f43-5bbaa2c2f263))
+![Architectural Diagram](![Image](https://github.com/karindragimhan49/CodeSnippetVault/blob/a69a1b5d965d50bb2a058cea2d69d601f0a6c22b/snap/digram.png))
 _High-level overview of the CI/CD workflow from code commit to live deployment._
 
 ---
@@ -87,7 +87,7 @@ The heart of this project is the automated deployment pipeline configured in `.g
 ### アクション (GitHub Actions) Workflow Screenshot
 
 <!-- Replace the URL below with your actual workflow screenshot URL. -->
-![GitHub Actions Workflow](<PASTE_YOUR_GITHUB_ACTIONS_SCREENSHOT_URL_HERE>)
+![GitHub Actions Workflow](https://github.com/karindragimhan49/CodeSnippetVault/blob/a69a1b5d965d50bb2a058cea2d69d601f0a6c22b/snap/github%20action.png)
 _A successful run of the CI/CD pipeline in the GitHub Actions tab._
 
 ---
@@ -134,7 +134,7 @@ To run this project on your local machine, you'll need Git, Node.js, and Docker 
 ### ☁️ Server Deployment Screenshot
 
 <!-- Replace the URL below with your server screenshot URL. -->
-![DigitalOcean Droplet SSH](![Image](https://github.com/karindragimhan49/CodeSnippetVault/blob/4dede5a400c82875f23a452516104b7c54097929/snap/digram.png)
+![DigitalOcean Droplet SSH](![Image](https://github.com/karindragimhan49/CodeSnippetVault/blob/a69a1b5d965d50bb2a058cea2d69d601f0a6c22b/snap/dropletvm.png)
 _Checking the status of running Docker containers on the DigitalOcean Droplet via `docker ps`._
 
 ---
