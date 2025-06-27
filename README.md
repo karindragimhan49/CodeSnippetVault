@@ -32,14 +32,6 @@ The core application is a "Code Snippet Vault" — a practical tool for develope
 
 <br/>
 
-### 🖼️ Application UI Screenshot
-
-<!-- Replace the URL below with your actual screenshot URL -->
-![Code Snippet Vault UI](https://github.com/karindragimhan49/CodeSnippetVault/blob/a69a1b5d965d50bb2a058cea2d69d601f0a6c22b/snap/ui.png)
-_The main interface of the Code Snippet Vault, showcasing the project filter and search functionality._
-
----
-
 ## 🛠️ Tech Stack & Architecture
 
 This project utilizes a modern, industry-standard technology stack to cover the entire development and deployment process.
@@ -57,8 +49,6 @@ This project utilizes a modern, industry-standard technology stack to cover the 
 
 ### 🏗️ Architectural Diagram
 
-<!-- This is a placeholder for your architecture diagram image. -->
-<!-- Replace the URL below with your actual diagram URL. -->
 ![Architectural Diagram](![Image](https://github.com/karindragimhan49/CodeSnippetVault/blob/a69a1b5d965d50bb2a058cea2d69d601f0a6c22b/snap/digram.png))
 _High-level overview of the CI/CD workflow from code commit to live deployment._
 
@@ -84,7 +74,7 @@ The heart of this project is the automated deployment pipeline configured in `.g
 
 <br/>
 
-### アクション (GitHub Actions) Workflow Screenshot
+### GitHub Actions Workflow Screenshot
 
 <!-- Replace the URL below with your actual workflow screenshot URL. -->
 ![GitHub Actions Workflow](https://github.com/karindragimhan49/CodeSnippetVault/blob/a69a1b5d965d50bb2a058cea2d69d601f0a6c22b/snap/github%20action.png)
@@ -134,7 +124,7 @@ To run this project on your local machine, you'll need Git, Node.js, and Docker 
 ### ☁️ Server Deployment Screenshot
 
 <!-- Replace the URL below with your server screenshot URL. -->
-![DigitalOcean Droplet SSH](![Image](https://github.com/karindragimhan49/CodeSnippetVault/blob/a69a1b5d965d50bb2a058cea2d69d601f0a6c22b/snap/dropletvm.png)
+![DigitalOcean Droplet SSH](https://github.com/karindragimhan49/CodeSnippetVault/blob/a69a1b5d965d50bb2a058cea2d69d601f0a6c22b/snap/dropletvm.png)
 _Checking the status of running Docker containers on the DigitalOcean Droplet via `docker ps`._
 
 ---
