@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="http://206.189.35.179:3000/">
+  <a href="https://code-snippet-vault-if81.vercel.app/">
     <img src="https://img.shields.io/badge/Live%20Demo-Open%20Application-blue?style=for-the-badge&logo=digitalocean" alt="Live Demo">
   </a>
 </p>
